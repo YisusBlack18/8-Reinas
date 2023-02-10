@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>8 Reinas</title>
+    <style>
+        table {
+            border: 1px solid;
+            border-collapse: collapse;
+        }
+        tr {
+            border: 1px solid;
+            border-collapse: collapse;
+        }
+        td {
+            border: 1px solid;
+            border-collapse: collapse;
+            width: 50px;
+            height: 50px;
+        }
+        tr:nth-child(even) td:nth-child(even), tr:nth-child(odd) td:nth-child(odd) {
+            background-color: black;
+        }
+        tr:nth-child(odd) td:nth-child(even), tr:nth-child(odd) td:nth-child(even) {
+            background-color: white;
+        }
+        div {
+            font-size: larger;
+        }
+    </style>
+    <script>
+        count = 0
+        function celdaClick(celda) {
+            // Este if valida si hay una imagen o no
+            if(window.getComputedStyle(celda).backgroundImage == "none") {
+                if (count != 8) {
+                    celda.style="background-image: url(protogema.png); background-repeat: no-repeat; background-size: cover;"
+                    count++
+                }
+            } else {
+                celda.style="background-image: none;"
+                count--
+            }
+            document.getElementById("div_contador").innerHTML="Reinas colocadas: "+count
+        }
+
+        function simulacion() {
+            alert("Sirve");
+        }
+
+        function reiniciar() {
+            //alert("Sirve");
+            var celdas=document.getElementById("tablero").getElementsByTagName("td");
+            for (let index = 0; index < celdas.length; index++) {
+                celdas[index].style="background-image: none;"
+            };
+            count = 0;
+            document.getElementById("div_contador").innerHTML="Reinas colocadas: "+count
+
+        }
+
+        function solucion1() {
+            //alert("Sirve");
+            reiniciar();
+            var celdas=document.getElementById("tablero");
+            celdas.rows[0].cells[4].style="background-image: url(protogema.png); background-repeat: no-repeat; background-size: cover;";
+            celdas.rows[1].cells[1].style="background-image: url(protogema.png); background-repeat: no-repeat; background-size: cover;";
+            celdas.rows[2].cells[3].style="background-image: url(protogema.png); background-repeat: no-repeat; background-size: cover;";
+            celdas.rows[3].cells[6].style="background-image: url(protogema.png); background-repeat: no-repeat; background-size: cover;";
+            celdas.rows[4].cells[2].style="background-image: url(protogema.png); background-repeat: no-repeat; background-size: cover;";
+            celdas.rows[5].cells[7].style="background-image: url(protogema.png); background-repeat: no-repeat; background-size: cover;";
+            celdas.rows[6].cells[5].style="background-image: url(protogema.png); background-repeat: no-repeat; background-size: cover;";
+            celdas.rows[7].cells[0].style="background-image: url(protogema.png); background-repeat: no-repeat; background-size: cover;";
+            count = 8;
+            document.getElementById("div_contador").innerHTML="Reinas colocadas: "+count
+        }
+        
+        function solucion2() {
+            //alert("Sirve");
+            reiniciar();
+            var celdas=document.getElementById("tablero");
+            celdas.rows[0].cells[4].style="background-image: url(protogema.png); background-repeat: no-repeat; background-size: cover;";
+            celdas.rows[1].cells[2].style="background-image: url(protogema.png); background-repeat: no-repeat; background-size: cover;";
+            celdas.rows[2].cells[7].style="background-image: url(protogema.png); background-repeat: no-repeat; background-size: cover;";
+            celdas.rows[3].cells[3].style="background-image: url(protogema.png); background-repeat: no-repeat; background-size: cover;";
+            celdas.rows[4].cells[6].style="background-image: url(protogema.png); background-repeat: no-repeat; background-size: cover;";
+            celdas.rows[5].cells[0].style="background-image: url(protogema.png); background-repeat: no-repeat; background-size: cover;";
+            celdas.rows[6].cells[5].style="background-image: url(protogema.png); background-repeat: no-repeat; background-size: cover;";
+            celdas.rows[7].cells[1].style="background-image: url(protogema.png); background-repeat: no-repeat; background-size: cover;";
+            count = 8;
+            document.getElementById("div_contador").innerHTML="Reinas colocadas: "+count
+        }
+
+    </script>
+
+</head>
+<body>
+    <table id="tablero">
+        <tr>
+            <td onclick="celdaClick(this)"></td>
+            <td onclick="celdaClick(this)"></td>
+            <td onclick="celdaClick(this)"></td>
+            <td onclick="celdaClick(this)"></td>
+            <td onclick="celdaClick(this)"></td>
+            <td onclick="celdaClick(this)"></td>
+            <td onclick="celdaClick(this)"></td>
+            <td onclick="celdaClick(this)"></td>
+        </tr>
+        <tr>
+            <td onclick="celdaClick(this)"></td>
+            <td onclick="celdaClick(this)"></td>
+            <td onclick="celdaClick(this)"></td>
+            <td onclick="celdaClick(this)"></td>
+            <td onclick="celdaClick(this)"></td>
+            <td onclick="celdaClick(this)"></td>
+            <td onclick="celdaClick(this)"></td>
+            <td onclick="celdaClick(this)"></td>
+        </tr>
+        <tr>
+            <td onclick="celdaClick(this)"></td>
+            <td onclick="celdaClick(this)"></td>
+            <td onclick="celdaClick(this)"></td>
+            <td onclick="celdaClick(this)"></td>
+            <td onclick="celdaClick(this)"></td>
+            <td onclick="celdaClick(this)"></td>
+            <td onclick="celdaClick(this)"></td>
+            <td onclick="celdaClick(this)"></td>
+        </tr>
+        <tr>
+            <td onclick="celdaClick(this)"></td>
+            <td onclick="celdaClick(this)"></td>
+            <td onclick="celdaClick(this)"></td>
+            <td onclick="celdaClick(this)"></td>
+            <td onclick="celdaClick(this)"></td>
+            <td onclick="celdaClick(this)"></td>
+            <td onclick="celdaClick(this)"></td>
+            <td onclick="celdaClick(this)"></td>
+        </tr>
+        <tr>
+            <td onclick="celdaClick(this)"></td>
+            <td onclick="celdaClick(this)"></td>
+            <td onclick="celdaClick(this)"></td>
+            <td onclick="celdaClick(this)"></td>
+            <td onclick="celdaClick(this)"></td>
+            <td onclick="celdaClick(this)"></td>
+            <td onclick="celdaClick(this)"></td>
+            <td onclick="celdaClick(this)"></td>
+        </tr>
+        <tr>
+            <td onclick="celdaClick(this)"></td>
+            <td onclick="celdaClick(this)"></td>
+            <td onclick="celdaClick(this)"></td>
+            <td onclick="celdaClick(this)"></td>
+            <td onclick="celdaClick(this)"></td>
+            <td onclick="celdaClick(this)"></td>
+            <td onclick="celdaClick(this)"></td>
+            <td onclick="celdaClick(this)"></td>
+        </tr>
+        <tr>
+            <td onclick="celdaClick(this)"></td>
+            <td onclick="celdaClick(this)"></td>
+            <td onclick="celdaClick(this)"></td>
+            <td onclick="celdaClick(this)"></td>
+            <td onclick="celdaClick(this)"></td>
+            <td onclick="celdaClick(this)"></td>
+            <td onclick="celdaClick(this)"></td>
+            <td onclick="celdaClick(this)"></td>
+        </tr>
+        <tr>
+            <td onclick="celdaClick(this)"></td>
+            <td onclick="celdaClick(this)"></td>
+            <td onclick="celdaClick(this)"></td>
+            <td onclick="celdaClick(this)"></td>
+            <td onclick="celdaClick(this)"></td>
+            <td onclick="celdaClick(this)"></td>
+            <td onclick="celdaClick(this)"></td>
+            <td onclick="celdaClick(this)"></td>
+        </tr>
+    </table>
+    <div id="div_contador">
+        Reinas colocadas: 0
+    </div>
+    <div>
+        <button onclick="simulacion()">
+            Simulacion
+        </button>
+        <button onclick="reiniciar()">
+            Reinicio
+        </button>
+        <button onclick="solucion1()">
+            Ejemplo 1
+        </button>
+        <button onclick="solucion2()">
+            Ejemplo 2
+        </button>
+    </div>
+</body>
+</html>
